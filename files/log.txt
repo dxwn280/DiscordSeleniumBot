@@ -1,0 +1,30 @@
+--- Starting Batch ---
+Checking username: username1
+Checking username: username2
+Checking username: username3
+Checking username: username4
+
+username1 = ['item1']
+
+Completed in 11.49
+
+--- Starting Batch ---
+Checking username: username5
+Checking username: username6
+Checking username: username7
+Checking username: username8
+
+username5 = ['item2', 'item3', 'item4']
+
+Completed in 11.76
+
+--- Starting Batch ---
+Checking username: username9
+Checking username: username10
+Checking username: username11
+Checking username: username12
+
+username9 = ['item5', 'item6']
+username12 = ['item7', 'item8', 'item9']
+
+Completed in 11.34
