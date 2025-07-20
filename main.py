@@ -37,7 +37,7 @@ username_xpaths = [f"/html/body/div[1]/div[2]/div[1]/div[1]/div/div[2]/div/div/d
 requeue = [] # list of usernames that need requing
 
 
-def writeToFile(username: str, limiteds: list): # for saving results if any
+def writeToFile(username: str, limiteds: list):
     '''Save any results'''
     with open('files\\output.txt', 'a') as file:
         writelimiteds = ', '.join(limiteds)
@@ -91,12 +91,12 @@ def runBatch(usernames: list):
     with ThreadPoolExecutor(max_workers=numCommands) as executor:
         for username in usernames:
             logging(f'Checking username: {username}')
-            executor.submit(sendCommand, username, driver) # send the 5 commands
+            executor.submit(sendCommand, username, driver)
 
         executor.shutdown(wait=True)
 
     logging('')
-    ContainerExist(container_xpaths[numCommands-1], 15, driver) # wait until last container exists
+    ContainerExist(container_xpaths[numCommands-1], 15, driver)
 
     with ThreadPoolExecutor(max_workers=numCommands) as executor:
         for username in usernames:
@@ -123,7 +123,7 @@ def main_loop():
             requeue.clear()
 
             line = line.strip()
-            temp_usernames.append(line) # append the usernames being used for the batch
+            temp_usernames.append(line)
             counter += 1
             
             if counter == numCommands: # to ensure we have the right amount of usernames for desired amount per batch
